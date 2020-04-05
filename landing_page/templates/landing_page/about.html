@@ -48,34 +48,50 @@
         <h2>Image Text</h2>
         <p>How to place text over an image:</p>
 
-        <div class="container">
+        <div class="container register">
 
 
             {% if registered %}
-             <h1>Thank you for registering!</h1>
+                <div class="thank-you">
+                    <img src="{% static 'images/sapit-thanks.jpg' %}" class="thank-you-image" alt="">
+                    <div class="centered thank-you"><h1 class="big-h1">תודה על הרשמתך!</h1></div>
+
+                <p >
+
+                תודה רבה על הרשמתך לסרטון לשחרור פלג הגוף העליון צוואר כתפיים ושכמות.
+                הסרטון יגיע בדקות הקרובות לתיבת האימייל שלך.
+
+                הסרטון מסביר בצורה קלילה ופשוטה איך להניע את פלג הגוף העליון, צוואר, הכתפיים ושכמות ולשחרר את הגוף!
+
+
+
+                </p>
+                </div>
             {% else %}
 
                 <div class="row justify-content-md-center">
-                <div class="col-md-10 text-center">
-                    <h1>רוצה לקבל את הסרטון הכי קול של יוגה</h1>
+                <div class="col-md-10">
+                    <h1>קליק ו -5 דקות סרטון לשחרור פלג הגוף העליון אצלך במייל!</h1>
+                <br>
                     <p>לקבלת סרטון של 5 דקות לשחרור פלג הגוף העליון - שכמות, כתפיים וצוואר מלא/י את פרטייך :</p>
-                    <form enctype="multipart/form-data" method="POST" action="javascript: void(0)">
+                    <form enctype="multipart/form-data" method="POST" >
                         {% csrf_token %}
                         {{ user_form.as_p }}
-                        {{ user_info_form.as_p }}
+{#                        {{ user_info_form.as_p }}#}
 
 
-
-
-
+{#                        <form action="javascript: void(0)">#}
                       <div>
                       <input type="checkbox" class="checkbox-circle checkbox-primary checkbox-info" name="send_newsletter" id="send_newsletter" required/>
-                      <label for="send_newsletter">אני מאשר קבלת דיוור והטבה לדואר האלקרוני</label>
+                      <label for="send_newsletter">אני מאשר/ת קבלת דיוור פרסומי.</label>
                       </div>
-
+{#                        </form>#}
 
                         <input type="submit" class="btn btn-primary btn-outline-white px-4 py-3 " value="אישור"/>
+
                     </form>
+
+
 
             </div>
         </div>

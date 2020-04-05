@@ -3,14 +3,20 @@
 
 }
 
-h1{
+h1, p, h2{
     color: white;
     text-align: center;
+    direction: rtl;
 }
 
-.overlay{
-    background-image: url("../images/white.png");
-}
+/*h1 {*/
+/*    font-size:6vw;*/
+/*}*/
+
+/*p{*/
+/*    font-size:2.5vw*/
+/*}*/
+
 
 form{
     direction: rtl;
@@ -28,4 +34,74 @@ form{
 .form-check-label{
     direction: rtl;
 
+}
+
+.thank-you{
+
+    font-size: 2.0vw;
+
+    /*font-size: 1.5em;*/
+    /*max-font-size: 100%;*/
+
+}
+@media screen and (min-width: 1200px) {
+  .thank-you {
+     font-size: 30px;
+  }
+}
+
+.thank-you p{
+
+/*position: center;*/
+/*          top: 120%;*/
+/*          left: 30%;*/
+/*    transform: translate(-10%, -10%);*/
+
+}
+
+
+.thank-you-image{
+    border-radius: 8px;
+    /*width: 650px;*/
+    /*height:  500px;*/
+    opacity: 0.7;
+    position: relative;
+    /*margin: auto;*/
+    width: 70%;
+    height: auto;
+    max-height:500px ;
+    max-width:650px ;
+
+}
+
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.big-h1{
+    font-size: 6vw;
+    font-weight: bold;
+    /*font-size:2.5em;*/
+    text-shadow: -1px 0 #606060, 0 1px #606060, 1px 0 #606060, 0 -1px #606060;
+    max-font-size: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .big-h1 {
+     font-size: 60px;
+  }
+}
+
+.img{
+    /*width:70%;*/
+    max-width:70%;
+    /*height: 70%;*/
+    max-height: 70%;
+    /*position: center;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    margin: auto;
 }
