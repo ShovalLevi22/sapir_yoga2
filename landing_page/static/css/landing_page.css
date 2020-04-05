@@ -1,0 +1,31 @@
+.container {
+    font-family: 'Varela Round', sans-serif;
+
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+.overlay{
+    background-image: url("../images/white.png");
+}
+
+form{
+    direction: rtl;
+}
+
+.textinputclass{
+    direction: rtl;
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    text-align: -moz-center;
+}
+
+.form-check-label{
+    direction: rtl;
+
+}

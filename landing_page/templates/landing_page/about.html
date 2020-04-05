@@ -1,0 +1,111 @@
+{% extends "landing_page/base.html" %}
+{% load static %}
+{% block body_block %}
+    <div class="slider-item">
+      <div class="overlay"></div>
+      <style>
+        .container {
+          position: relative;
+          text-align: center;
+          color: white;
+        }
+
+        .bottom-left {
+          position: absolute;
+          bottom: 8px;
+          left: 16px;
+        }
+
+        .top-left {
+          position: absolute;
+          top: 8px;
+          left: 16px;
+        }
+
+        .top-right {
+          position: absolute;
+          top: 8px;
+          right: 16px;
+        }
+
+        .bottom-right {
+          position: absolute;
+          bottom: 8px;
+          right: 16px;
+        }
+
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      </style>
+{#      </head>#}
+{##}
+{#      <body>#}
+
+        <h2>Image Text</h2>
+        <p>How to place text over an image:</p>
+
+        <div class="container">
+
+
+            {% if registered %}
+             <h1>Thank you for registering!</h1>
+            {% else %}
+
+                <div class="row justify-content-md-center">
+                <div class="col-md-10 text-center">
+                    <h1>רוצה לקבל את הסרטון הכי קול של יוגה</h1>
+                    <p>לקבלת סרטון של 5 דקות לשחרור פלג הגוף העליון - שכמות, כתפיים וצוואר מלא/י את פרטייך :</p>
+                    <form enctype="multipart/form-data" method="POST" action="javascript: void(0)">
+                        {% csrf_token %}
+                        {{ user_form.as_p }}
+                        {{ user_info_form.as_p }}
+
+
+
+
+
+                      <div>
+                      <input type="checkbox" class="checkbox-circle checkbox-primary checkbox-info" name="send_newsletter" id="send_newsletter" required/>
+                      <label for="send_newsletter">אני מאשר קבלת דיוור והטבה לדואר האלקרוני</label>
+                      </div>
+
+
+                        <input type="submit" class="btn btn-primary btn-outline-white px-4 py-3 " value="אישור"/>
+                    </form>
+
+            </div>
+        </div>
+
+      {% endif %}
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center">
+            <div class="col-md-10 ftco-animate text-center">
+
+
+              <style>
+                input[type=text] {
+                  margin: 10px 0;
+                  box-sizing: border-box;
+                  border: #ACC0D1;
+                  border-bottom: 2px;
+                  border-radius: 30px;
+                }
+              </style>
+
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}
