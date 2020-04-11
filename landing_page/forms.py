@@ -9,8 +9,8 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'email')
 
         labels = {
-            'username':'הכנס שם מלא:',
-            'email':'הכנס כתובת מייל',
+            'username':'שם מלא:',
+            'email':'כתובת מייל',
         }
         help_texts = {
             'username': '',
@@ -26,10 +26,10 @@ class UserInfoForm(forms.ModelForm):
 
     class Meta:
         model = UserInfo
-        fields = ('phone',)
-        labels = {
-            'phone': 'הכנס טלפון',
-            }
-        widgets = {
-            'phone': forms.TextInput(attrs={'class': 'textinputclass'}),
-        }
+        fields = ('url_id',)
+        # labels = {
+        #     'phone': 'הכנס טלפון',
+        #     }
+        # widgets = {
+        #     'phone': forms.TextInput(attrs={'class': 'textinputclass'}),
+        # }

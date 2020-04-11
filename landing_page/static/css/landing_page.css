@@ -9,15 +9,6 @@ h1, p, h2{
     direction: rtl;
 }
 
-/*h1 {*/
-/*    font-size:6vw;*/
-/*}*/
-
-/*p{*/
-/*    font-size:2.5vw*/
-/*}*/
-
-
 form{
     direction: rtl;
 }
@@ -38,26 +29,17 @@ form{
 
 .thank-you{
 
-    font-size: 2.0vw;
-
-    /*font-size: 1.5em;*/
-    /*max-font-size: 100%;*/
+    direction: rtl;
+    font-size: 1.5em;
 
 }
-@media screen and (min-width: 1200px) {
-  .thank-you {
-     font-size: 30px;
-  }
-}
+/*@media screen and (min-width: 1200px) {*/
+/*  .thank-you {*/
+/*     font-size: 30px;*/
+/*  }*/
+/*}*/
 
-.thank-you p{
 
-/*position: center;*/
-/*          top: 120%;*/
-/*          left: 30%;*/
-/*    transform: translate(-10%, -10%);*/
-
-}
 
 
 .thank-you-image{
@@ -86,7 +68,7 @@ form{
     font-size: 6vw;
     font-weight: bold;
     /*font-size:2.5em;*/
-    text-shadow: -1px 0 #606060, 0 1px #606060, 1px 0 #606060, 0 -1px #606060;
+    /*text-shadow: -1px 0 #606060, 0 1px #606060, 1px 0 #606060, 0 -1px #606060;*/
     max-font-size: 100%;
 }
 @media screen and (min-width: 1200px) {
@@ -105,3 +87,20 @@ form{
     /*margin-right: auto;*/
     margin: auto;
 }
+
+
+
+.box{
+        position: relative;
+        display: inline-block; /* Make the width of box same as image */
+    }
+    .box .text{
+        position: absolute;
+        z-index: 999;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 40%; /* Adjust this value to move the positioned div up and down */
+        text-align: center;
+        width: 60%; /* Set the width of the positioned div */
+    }
