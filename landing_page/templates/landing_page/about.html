@@ -1,98 +1,77 @@
-{% extends "landing_page/base.html" %}
+{% extends "landing_page/../base.html" %}
 {% load static %}
 {% block body_block %}
-    <div class="slider-item">
-      <div class="overlay"></div>
-      <style>
-        .container {
-          position: relative;
-          text-align: center;
-          color: white;
-        }
 
 
-      </style>
-{#      </head>#}
-{##}
-{#      <body>#}
+{% if registered %}
+    <div class="thank-you">
+        <img src="{% static 'images/sapit-thanks.jpg' %}" class="thank-you-image" alt="">
+        <div class="thank-you text-nowrap bd-highlight big-h1" style="width: 8rem;"><h1 class="c">תודה על הרשמתך!</h1></div>
 
-        <h2>Image Text</h2>
-        <p>How to place text over an image:</p>
+        <p  class="text-justify">
 
-        <div class="container">
+        תודה רבה על הרשמתך לסרטון לשחרור פלג הגוף העליון צוואר כתפיים ושכמות.
+        הסרטון יגיע בדקות הקרובות לתיבת האימייל שלך.
 
-
-            {% if registered %}
-                <div class="thank-you">
-                    <img src="{% static 'images/sapit-thanks.jpg' %}" class="thank-you-image" alt="">
-                    <div class="thank-you text-nowrap bd-highlight big-h1" style="width: 8rem;"><h1 class="c">תודה על הרשמתך!</h1></div>
-
-                <p  class="text-justify">
-
-                תודה רבה על הרשמתך לסרטון לשחרור פלג הגוף העליון צוואר כתפיים ושכמות.
-                הסרטון יגיע בדקות הקרובות לתיבת האימייל שלך.
-
-                הסרטון מסביר בצורה קלילה ופשוטה איך להניע את פלג הגוף העליון, צוואר, הכתפיים ושכמות ולשחרר את הגוף!
+        הסרטון מסביר בצורה קלילה ופשוטה איך להניע את פלג הגוף העליון, צוואר, הכתפיים ושכמות ולשחרר את הגוף!
 
 
 
-                </p>
-                </div>
-            {% else %}
+        </p>
 
-                <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                    <h1>קליק ו -5 דקות סרטון לשחרור פלג הגוף העליון אצלך במייל!</h1>
-                <br>
-                    <p>לקבלת סרטון של 5 דקות לשחרור פלג הגוף העליון - שכמות, כתפיים וצוואר מלא/י את פרטייך :</p>
-                    <form enctype="multipart/form-data" method="POST" >
-                        {% csrf_token %}
-                        {{ user_form.as_p }}
-                        {{ user_info_form.as_p }}
+    </div>
 
+{% else %}
 
-
-                      <div>
-                      <input type="checkbox" class="checkbox-circle checkbox-primary checkbox-info" name="send_newsletter" id="send_newsletter" required/>
-                      <label for="send_newsletter">אני מאשר/ת קבלת דיוור פרסומי.</label>
-                      </div>
-
-
-                        <input type="submit" class="btn btn-primary btn-outline-white px-4 py-3 " value="אישור"/>
-
-                    </form>
+    <div class="row justify-content-md-center">
+        <div class="col-md-10">
+            <h1>קליק ו -5 דקות סרטון לשחרור פלג הגוף העליון אצלך במייל!</h1>
+        <br>
+            <p>לקבלת סרטון של 5 דקות לשחרור פלג הגוף העליון - שכמות, כתפיים וצוואר מלא/י את פרטייך :</p>
+            <form enctype="multipart/form-data" method="POST" >
+                {% csrf_token %}
+                {{ user_form.as_p }}
+                {{ user_info_form.as_p }}
 
 
 
-            </div>
-        </div>
-
-      {% endif %}
-
-
-
-            </div>
-          </div>
-        </div>
+              <div>
+              <input type="checkbox" class="checkbox-circle checkbox-primary checkbox-info" name="send_newsletter" id="send_newsletter" required/>
+              <label for="send_newsletter">אני מאשר/ת קבלת דיוור פרסומי.</label>
+              </div>
 
 
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-10 ftco-animate text-center">
+                <input type="submit" class="btn btn-primary btn-outline-white px-4 py-3 " value="אישור"/>
+
+            </form>
 
 
-              <style>
-                input[type=text] {
-                  margin: 10px 0;
-                  box-sizing: border-box;
-                  border: #ACC0D1;
-                  border-bottom: 2px;
-                  border-radius: 30px;
-                }
-              </style>
-
-            </div>
-          </div>
         </div>
     </div>
+
+{% endif %}
+
+{#</div>#}
+
+
+
+{#        <div class="container">#}
+{#          <div class="row slider-text align-items-center justify-content-center">#}
+{#            <div class="col-md-10 ftco-animate text-center">#}
+{##}
+{##}
+{#              <style>#}
+{#                input[type=text] {#}
+{#                  margin: 10px 0;#}
+{#                  box-sizing: border-box;#}
+{#                  border: #ACC0D1;#}
+{#                  border-bottom: 2px;#}
+{#                  border-radius: 30px;#}
+{#                }#}
+{#              </style>#}
+{##}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#    </div>#}
 {% endblock %}
