@@ -30,7 +30,7 @@
             <p>לקבלת סרטון של 5 דקות לשחרור פלג הגוף העליון - שכמות, כתפיים וצוואר מלא/י את פרטייך :</p>
             <form enctype="multipart/form-data" method="POST" >
                 {% csrf_token %}
-                {{ user_form.as_p }}
+{#                {{ user_form.as_p }}#}
                 {{ user_info_form.as_p }}
 
 

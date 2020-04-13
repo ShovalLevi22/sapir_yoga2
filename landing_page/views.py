@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, CreateView, View
 import uuid
 
 from django.urls import reverse_lazy
-from landing_page.forms import UserForm, UserInfoForm
+from landing_page.forms import UserInfoForm #UserForm,
 from landing_page.models import UserInfo, User
 from django.shortcuts import render, get_object_or_404, redirect
 from . main import send_mail
@@ -11,7 +11,7 @@ from . main import send_mail
 # Create your views here.
 class AboutView(View):
     template_name = 'landing_page/about.html'
-    form_class = UserForm
+    form_class = UserInfoForm
     model = UserInfo
 
 
@@ -21,34 +21,34 @@ def register(request):
     registered = False
 
     if request.method == "POST":
-        user_form = UserForm(data=request.POST)
-        user_info_form = UserInfoForm()
-        if user_form.is_valid():  # and user_info_form.is_valid():
-            user = user_form.save()
+        # user_form = UserForm(data=request.POST)
+        user_info_form = UserInfoForm(data=request.POST)
+        if user_info_form.is_valid():  #user_form.is_valid():  # and
+            # user_info = user_form.save()
 
-            user.save()
+            # user.save()
 
             info = user_info_form.save(commit=False)
 
             info.url_id = str(uuid.uuid1()).split('-')[1]
-            info.user = user
+            # info.user = user
 
             info.save()
             registered = True
 
-            send_mail(to=user.email,
+            send_mail(to=info.email,
                       campaign_json='landing_page/Sapir.json',
                       url_id=info.url_id)
         else:
-            print(user_form.errors, user_info_form.errors)
+            print(user_info_form.errors)
 
 
     else:
-        user_form = UserForm()
-        # user_info_form = UserInfoForm()
+        # user_form = UserForm()
+        user_info_form = UserInfoForm()
 
     return render(request, 'landing_page/about.html',
-                  {'user_form': user_form, 'user_info_form': False, 'registered': registered})
+                  {'user_info_form': user_info_form, 'registered': registered})
 
 
 class VideoPageView(TemplateView):
